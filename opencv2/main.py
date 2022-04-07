@@ -3,28 +3,23 @@ from tkinter import filedialog
 
 path = filedialog.askopenfilename()
 
-print("Select image flag")
-print("1. Color")
-print("2. Grayscale")
-print("3. Unchange")
-print("0. Exit")
 
-userInput = int(input("Select to change color: "))
+userInput = int(input("COLOR  OPTIONS \n[1] Color \n[2] Grayscale \n[3] Unchange \n[0] Exit \nChoose Color: "))
 
 if userInput == 1:
-    flag = 1
+    f = 1
 elif userInput == 2:
-    flag = 0
+    f = 0
 elif userInput == 3: 
-    flag = -1
+    f = -1
 elif userInput == 0:
     exit()
 else: 
-    flag = 1
+    f = 1
 
 cv2.startWindowThread()
 
-image = cv2.imread(path, flag)
+image = cv2.imread(path, f)
 
 cv2.imshow("Window Name", image)
 cv2.waitKey(0)
